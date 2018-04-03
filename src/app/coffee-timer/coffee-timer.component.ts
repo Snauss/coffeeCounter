@@ -21,7 +21,6 @@ export class CoffeeTimerComponent implements OnInit {
 
     this.coffeesObservable.subscribe(data => {
       let last = data[data.length - 1];
-      console.log(last);
       this.lastTimestamp = last.timestamp;
 
     });
