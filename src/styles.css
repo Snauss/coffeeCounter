@@ -1,0 +1,10 @@
+body{
+  background-color: #efefef;
+}
+
+.top-header{
+  background-color: #E3CDA4;
+  color: #2F343B;
+  /*border-bottom: 2px solid black;*/
+  padding: 3% 2%;
+}

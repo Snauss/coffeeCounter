@@ -1,0 +1,33 @@
+<div class="col-sm-6 offset-sm-1">
+  <form>
+    <div class="form-group">
+      <div class="btn-group form-check" data-toggle="buttons">
+        <label class="btn btn-primary center-align" *ngFor="let type of types" (click)="selector('type', type)">
+          <input type="radio" name="coffeeType" class="center-align">{{type}}
+        </label>
+      </div>
+      <div class="btn-group form-check" data-toggle="buttons">
+        <label class="btn btn-primary center-align" *ngFor="let location of locations" (click)="selector('location',location)">
+          <input type="radio" name="coffeeLocation" class="center-align">{{location}}
+        </label>
+      </div>
+      <div class="btn-group form-check" data-toggle="buttons">
+        <label class="btn btn-primary center-align" *ngFor="let size of sizes" (click)="selector('size',size)">
+          <input type="radio" name="coffeeSize" class="center-align">{{size}}
+        </label>
+      </div>
+    </div>
+    <div class="row newCoffee-preview">
+      <div class="col-xs-6">
+        <i *ngIf="selectedType" class="fas fa-coffee" ngClass=""></i>
+      </div>
+      <div class="col-xs-6">
+        <div></div>
+      </div>
+    </div>
+    <div class="justify-content-md-center">
+      <!--<p>{{selectedType}}</p>-->
+      <button type="submit" class="btn btn-danger" (click)="addCoffee($event)">Add new coffee</button>
+    </div>
+  </form>
+</div>

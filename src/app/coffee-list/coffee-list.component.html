@@ -1,0 +1,13 @@
+<div>
+  <h2 class="text-center">Latest 5 coffees</h2>
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let coffee of coffeesObservable | async; " class="text-center list-group-item">
+      <span>{{coffee.timestamp | date: 'HH:mm:ss dd-MM-yyyy'}}</span>
+      <span class="text-center">{{coffee.type}}</span>
+    </li>
+  </ul>
+</div>
+
+
+
+
