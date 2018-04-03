@@ -3,17 +3,16 @@
     <h1 class="text-center w-100">Welcome to the Coffee Counter</h1>
   </div>
   <div class="row">
-    <div class="col-md-8">
-      <div class="newCoffee-container">
+      <div class="newCoffee-container col-md-12">
         <app-new-coffee></app-new-coffee>
       </div>
-      <div class="coffeeTimer-container">
-        <app-coffee-timer></app-coffee-timer>
-      </div>
+  </div>
+  <div class="row">
+    <div class="coffeeList-container col-md-8 col-sm-12">
+      <app-coffee-list class="row"></app-coffee-list>
     </div>
-    <div class="coffeeList-container col-md-4">
-      <app-coffee-list></app-coffee-list>
+    <div class="coffeeTimer-container col-md-4 col-sm-12">
+      <app-coffee-timer class="w-100"></app-coffee-timer>
     </div>
   </div>
-
 </div>

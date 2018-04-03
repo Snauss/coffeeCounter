@@ -1,33 +1,93 @@
-<div class="col-sm-6 offset-sm-1">
-  <form>
-    <div class="form-group">
-      <div class="btn-group form-check" data-toggle="buttons">
-        <label class="btn btn-primary center-align" *ngFor="let type of types" (click)="selector('type', type)">
-          <input type="radio" name="coffeeType" class="center-align">{{type}}
-        </label>
+<form class="row">
+  <div class="col-lg-7 offset-lg-1 col-md-12">
+    <h2 class="text-center">New coffee</h2>
+  </div>
+  <div class="form-group col-md-7 offset-md-1 col-sm-12 newCoffeeForm">
+    <div class=" btn-group btn-group-toggle coffeeSizes col-sm-12" data-toggle="buttons">
+      <label class="btn center-align col-md-4" *ngFor="let size of sizes" (click)="selector('size',size)">
+        <input type="radio" name="coffeeSize" class="center-align">
+        <i class="fas fa-coffee" [ngStyle]="{'font-size':size === 'Small' ? '1rem':'2rem'}"
+           [ngClass]="{'largeSize': size === 'Large'}"></i>
+        <br>
+        <span>{{size}}</span>
+        <!--<i class="fas fa-home"></i><br><span>{{size}}</span>-->
+      </label>
+    </div>
+    <div class="btn-group btn-group-toggle coffeeTypes col-sm-12" data-toggle="buttons">
+      <label class="btn center-align col-md-4" *ngFor="let type of types"
+             ngClass="{{type.replace(' ', '_').toLocaleLowerCase()}}" (click)="selector('type', type)">
+        <input type="radio" name="coffeeType" class="center-align">
+        <i class="fas fa-coffee"></i><br>
+        <span>{{type}}</span>
+      </label>
+    </div>
+    <div class="btn-group btn-group-toggle coffeeLocations col-sm-12" data-toggle="buttons">
+      <label class="btn center-align col-md-4" *ngFor="let location of locations"
+             (click)="selector('location',location)">
+        <input type="radio" name="coffeeLocation" class="center-align">
+        <i *ngIf="location == 'Home'" class="fas fa-home"></i>
+        <i *ngIf="location == 'Work'" class="fas fa-briefcase"></i>
+        <i *ngIf="location == 'Other'" class="fas fa-road"></i>
+        <br>
+        <span>{{location}}</span>
+      </label>
+    </div>
+  </div>
+  <div class="form-group newCoffee-preview-box col-md-3 offset-md-0 col-sm-10 offset-sm-1">
+    <div class="row newCoffee-errorText" *ngIf="!selectedType && !selectedSize" [ngClass]="{'invalidAddEvent':invalidAddEvent}">
+      <strong>Pick a type</strong>
+    </div>
+    <div class="row newCoffee-errorText" *ngIf="!selectedType && !selectedSize" [ngClass]="{'invalidAddEvent':invalidAddEvent}">
+      <strong>Pick a size</strong>
+    </div>
+    <div class="row newCoffee-typeSize" *ngIf="selectedType || selectedSize">
+      <div class="newCoffee-typeSize-icon col-5 text-center">
+      <span [class.whiteColorIcon]="selectedType === 'With milk'"
+            [class.fancyColorIcon]="selectedType === 'Fancy'"
+            [class.smallerIcon]="selectedSize === 'Small'"
+            [class.largerIcon]="selectedSize === 'Large'">
+            <i *ngIf="selectedType || selectedSize" class="fas fa-coffee"></i>
+        </span>
       </div>
-      <div class="btn-group form-check" data-toggle="buttons">
-        <label class="btn btn-primary center-align" *ngFor="let location of locations" (click)="selector('location',location)">
-          <input type="radio" name="coffeeLocation" class="center-align">{{location}}
-        </label>
-      </div>
-      <div class="btn-group form-check" data-toggle="buttons">
-        <label class="btn btn-primary center-align" *ngFor="let size of sizes" (click)="selector('size',size)">
-          <input type="radio" name="coffeeSize" class="center-align">{{size}}
-        </label>
+      <div class="newCoffee-typeSize-text col-7 text-center">
+
+        <div class="row newCoffee-errorText-inBox" *ngIf="selectedType && !selectedSize" [ngClass]="{'invalidAddEvent':invalidAddEvent}">
+          <span>Pick a size</span>
+        </div>
+        <span *ngIf="selectedSize">{{selectedSize}}</span>
+        <br *ngIf="selectedSize  && selectedType">
+        <div class="row newCoffee-errorText-inBox" *ngIf="!selectedType && selectedSize" [ngClass]="{'invalidAddEvent':invalidAddEvent}">
+          <span>Pick a type</span>
+        </div>
+        <span *ngIf="selectedType">{{selectedType}}</span>
       </div>
     </div>
-    <div class="row newCoffee-preview">
-      <div class="col-xs-6">
-        <i *ngIf="selectedType" class="fas fa-coffee" ngClass=""></i>
-      </div>
-      <div class="col-xs-6">
-        <div></div>
+
+    <div class="row newCoffee-errorText" *ngIf="!selectedLocation" [ngClass]="{'invalidAddEvent':invalidAddEvent}">
+      <strong>Pick a location</strong>
+    </div>
+    <div class="row" *ngIf="selectedLocation">
+      <div class="newCoffee-location col-sm-12">
+        <div class="newCoffee-location-icon">
+          <i class="fas"
+             [class.fa-home]="selectedLocation === 'Home'"
+             [class.fa-briefcase]="selectedLocation === 'Work'"
+             [class.fa-road]="selectedLocation === 'Other'"></i>
+          <br>
+        </div>
+          <div class="newCoffee-location-text">
+            <span>Location: {{selectedLocation}}</span>
+          </div>
+          <div class="" >
+
+          </div>
+
       </div>
     </div>
-    <div class="justify-content-md-center">
-      <!--<p>{{selectedType}}</p>-->
-      <button type="submit" class="btn btn-danger" (click)="addCoffee($event)">Add new coffee</button>
+    <div class="row">
+      <div class="newCoffee-addButton text-center col-sm-12" (click)="addCoffee($event)">
+         <span>Add new coffee</span>
+      </div>
     </div>
-  </form>
-</div>
+  </div>
+</form>

@@ -1,12 +1,31 @@
-<div>
-  <h2 class="text-center">Latest 5 coffees</h2>
-  <ul class="list-group list-group-flush">
-    <li *ngFor="let coffee of coffeesObservable | async; " class="text-center list-group-item">
-      <span>{{coffee.timestamp | date: 'HH:mm:ss dd-MM-yyyy'}}</span>
-      <span class="text-center">{{coffee.type}}</span>
-    </li>
-  </ul>
-</div>
+<h2 class="text-center w-100">Latest 5 coffees</h2>
+<!--<ul class="list-group list-group-flush">-->
+<!--<li *ngFor="let coffee of coffeesObservable | async; " class="text-center list-group-item">-->
+<!--<span>{{coffee.timestamp | date: 'HH:mm:ss dd-MM-yyyy'}}</span>-->
+<!--<span class="text-center">{{coffee.type}}</span>-->
+<!--</li>-->
+<!--</ul>-->
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Time</th>
+    <th scope="col">Size</th>
+    <th scope="col">Type</th>
+    <th scope="col">Location</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let coffee of coffeesObservable | async; ">
+    <td>
+      {{coffee.timestamp | date: 'HH:mm:ss'}}<br>
+      {{coffee.timestamp | date: 'dd-MM-yy'}}
+    </td>
+    <td>{{coffee.size.charAt(0).toUpperCase() + coffee.size.slice(1)}}</td>
+    <td>{{coffee.type.charAt(0).toUpperCase() + coffee.type.slice(1)}}</td>
+    <td>{{coffee.location.charAt(0).toUpperCase() + coffee.location.slice(1)}}</td>
+  </tr>
+  </tbody>
+</table>
 
 
 

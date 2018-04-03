@@ -6,5 +6,217 @@ body{
   background-color: #E3CDA4;
   color: #2F343B;
   /*border-bottom: 2px solid black;*/
-  padding: 3% 2%;
+  padding: 2%;
+  /*margin-bottom: 2rem;*/
 }
+
+.newCoffee-container{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.newCoffeeForm label{
+  /*width: 100%;*/
+  height:6.2rem;
+  padding-top: 1.5rem;
+  margin-left: 0!important;
+  border-radius: 0!important;
+}
+
+.newCoffeeForm label svg{
+  font-size: 2rem;
+  height: 2rem;
+  vertical-align: text-top;
+}
+.newCoffeeForm label span{
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+.newCoffeeForm label:not(:last-child) {
+  /*border-right: solid 1px grey;*/
+}
+.newCoffeeForm label:hover,
+.newCoffeeForm label.active
+{
+  background-color: #267A5F;
+}
+.newCoffeeForm .coffeeTypes,
+.newCoffeeForm .coffeeSizes,
+.newCoffeeForm .coffeeLocations{
+  padding:0;
+  margin-top: 2px;
+}
+
+
+/*----- Type selector start-----*/
+.coffeeTypes{
+  background-color: #703030;
+}
+.coffeeTypes .black svg{
+  color: black;
+}
+.coffeeTypes .with_milk svg{
+  color: white;
+}
+.coffeeTypes .fancy svg{
+  color: #E3CDA4;
+}
+/*----- Type selector end-----*/
+
+
+/*----- Size selector start-----*/
+.coffeeSizes{
+  background-color: #C77966;
+}
+.coffeeSizes label svg{
+  color: white;
+}
+.coffeeSizes label .largetSize{
+  font-size: 3rem!important;
+  height: 3rem!important;
+  margin-top: -1rem;
+}
+/*----- Size selector ends-----*/
+
+
+/*----- Location selector start-----*/
+.coffeeLocations{
+  background-color: #2F343B;
+}
+.coffeeLocations label svg{
+  color: white;
+}
+/*----- Location selector ends-----*/
+
+
+/*----- New coffee preview start-----*/
+.newCoffee-preview-box {
+  background-color: #7E827A;
+  min-height: 15rem;
+  height: auto;
+  cursor: pointer;
+}
+
+.newCoffee-errorText,
+.newCoffee-errorText-inBox{
+  display: none;
+}
+.newCoffee-errorText.invalidAddEvent{
+  display: block;
+  color: white;
+  padding-top: 3rem;
+  text-align: center;
+}
+.newCoffee-errorText-inBox.invalidAddEvent{
+  display: block;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .newCoffee-errorText-inBox,
+  .newCoffee-errorText{
+    padding-top: 1.2rem!important;
+  }
+}
+/*----- Size and type start ----*/
+.newCoffee-typeSize{
+  height:6rem;
+  border-bottom: 1px solid #E3CDA4;
+  padding-top: 2%;
+}
+.newCoffee-typeSize-icon{
+  border-right: 1px solid #E3CDA4;
+  height: 100%;
+}
+.newCoffee-typeSize-icon svg{
+  font-size: 2rem;
+  align-self: center;
+  height: 100%;
+}
+.newCoffee-typeSize-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  align-self: center;
+}
+.newCoffee-typeSize-icon .whiteColorIcon svg{color: white}
+.newCoffee-typeSize-icon .fancyColorIcon svg{color: #E3CDA4}
+.newCoffee-typeSize-icon .smallerIcon svg{font-size: 1rem}
+.newCoffee-typeSize-icon .largerIcon svg{font-size: 3rem}
+/*----- Size and type end ----*/
+
+
+/*----- Location start ----*/
+.newCoffee-location{
+  padding-top: 1rem;
+  text-align: center;
+  height:6rem;
+}
+.newCoffee-location-icon svg{
+  font-size: 2rem;
+  align-self: center;
+  height: 100%;
+  color: white;
+}
+.newCoffee-location-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  align-self: center;
+}
+/*----- Location end ----*/
+
+
+/*----- Add button start ----*/
+.newCoffee-addButton{
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  width:100%;
+  background-color: #267A5F ;
+  padding: 3% 1%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+.newCoffee-addButton:hover{
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+
+}
+/*----- Add button end ----*/
+/*----- New coffee preview end-----*/
+
+/*----- List container start*/
+.coffeeList-container{
+  background-color: #7E827A;
+  color: #fff;
+  padding-top: 0.3rem;
+}
+/*-----List container end*/
+
+
+
+
+/*----- Timer - Fixed box start-----*/
+.coffeeTimer-container{
+  height: auto;
+  min-height: 5rem;
+  background-color: #2F343B;
+  color: #fff;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+.coffeeTimer-container .timerText{
+  font-size: 1.5rem;
+}
+/*----- Timer - Fixed box ends-----*/
+

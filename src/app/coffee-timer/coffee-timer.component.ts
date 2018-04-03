@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {AngularFireDatabase} from 'angularfire2/database';
-import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-coffee-timer',
@@ -13,7 +12,6 @@ export class CoffeeTimerComponent implements OnInit {
 
   public sinceLast: any;
   private lastTimestamp: any;
-  public selectedType: any;
 
   constructor(private db: AngularFireDatabase) {
   }
