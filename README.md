@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.3.
 
 ## Simply start
-Run: "npm install" ---> "npm  start".  
+Run: "npm install" ---> "ng serve".
 
 ## Development server
 
